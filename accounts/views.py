@@ -57,3 +57,5 @@ def reset_password(request):
     return render(request, 'accounts/registration/password_reset_form.html', {
         'form': form
     })
+
+    
