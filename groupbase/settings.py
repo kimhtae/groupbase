@@ -126,6 +126,7 @@ LOGIN_URL = '/login'
 
 EMAIL_HOST = '183.112.10.49'
 EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'andrew.kim@ablgam.com'
 EMAIL_HOST_USER = 'andrewk'
 EMAIL_HOST_PASSWORD = 'Password01*'
 EMAIL_USE_TLS = True
