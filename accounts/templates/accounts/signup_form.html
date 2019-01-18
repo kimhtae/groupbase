@@ -1,0 +1,56 @@
+{% extends 'accounts/layout.html' %}
+
+{% block content %}
+
+<!--	
+	<form action="" method="POST">
+		{% csrf_token %}
+		<table>
+			{{ form.as_table }}
+		</table>
+		
+		<input type="submit" />
+	</form>
+-->
+<div class="container">
+	<div class="card card-register mx-auto mt-5">
+		<div class="card-header">Register an Account</div>
+		<div class="card-body">
+			<form action="" method="POST" class="form-signin">
+				{% csrf_token %}
+
+				<div class="form-group">
+
+					<label for="{{ form.username.id_for_label }}" class="sr-only">ID</label>
+					<input type="text" id="{{ form.username.id_for_label }}" class="form-control" placeholder="Username" required=""
+					 autofocus="" name="{{ form.username.html_name }}" required autofocus>
+				</div>
+				<div class="form-group">
+					<label for="{{ form.email.id_for_label }}" class="sr-only">Password</label>
+					<input type="email" id="{{ form.email.id_for_label }}" class="form-control" placeholder="Email" required="" name="{{ form.email.html_name }}"
+					 required>
+				</div>
+				<div class="form-group">
+					<label for="{{ form.password1.id_for_label }}" class="sr-only">Password</label>
+					<input type="password" id="{{ form.password1.id_for_label }}" class="form-control" placeholder="Password" required=""
+					 name="{{ form.password1.html_name }}" required>
+				</div>
+				<div class="form-group">
+					<label for="{{ form.password2.id_for_label }}" class="sr-only">Comfirm Password</label>
+					<input type="password" id="{{ form.password2.id_for_label }}" class="form-control" placeholder="Confirm Password"
+					 required="" name="{{ form.password2.html_name }}" required>
+				</div>
+
+
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+				<p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+
+			</form>
+			<div class="text-center">
+				<a class="d-block small mt-3" href="{% url 'login' %}">Login Page</a>
+				<a class="d-block small" href="#">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
