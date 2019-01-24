@@ -1,0 +1,55 @@
+{% extends 'business/layout.html' %}
+
+{% block content %}
+
+<form action="{% url 'business:info_search' %}" method="GET">
+  <input type="text" name="query" placeholder="검색">
+  <input type="submit" value="검색">
+</form>
+<div>
+
+<!-- DataTables Example -->
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Data Table Example</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Original URL</th>
+              <th>Naver URL</th>
+              <th>Description</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+                <th>Title</th>
+                <th>Original URL</th>
+                <th>Naver URL</th>
+                <th>Description</th>
+                <th>Date</th>
+                
+            </tr>
+          </tfoot>
+          <tbody>
+            {% for item in items %}
+            <tr>
+              <td>{{ item.title }}</td>
+              <td>{{ item.originallink }}</td>
+              <td>{{ item.link }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.pubDate }}</td>
+              
+            </tr>
+            {% endfor %}          
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
